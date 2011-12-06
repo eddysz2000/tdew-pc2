@@ -1,5 +1,4 @@
 require "test/unit"
-require_relative "romanos"
 
 class TestRomanos < Test::Unit::TestCase
 
@@ -93,6 +92,7 @@ class Romanos
 
     def convertir(numero)
     	romano=""
+    	romano<<"V" if numero ==5
         romano<<"IV" if numero ==4
     	romano<<"I"*numero if numero <4
     	romano
