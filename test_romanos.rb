@@ -90,8 +90,17 @@ end
 
 class Romanos
 
+    ROMANOS=[[5,"V"],[4,"IV"],[1,"I"]]
+
     def convertir(numero)
     	romano=""
+
+    	for digito,codigo in ROMANOS
+    		veces,resto = numero.divmod(digito)
+    		romano <<codigo*veces
+    		numero =resto
+    	end
+    	
     	romano<<"V" if numero ==5
         romano<<"IV" if numero ==4
     	romano<<"I"*numero if numero <4
