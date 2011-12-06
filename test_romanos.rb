@@ -1,6 +1,7 @@
 require "test/unit"
+require_relative "romanos"
 
-class RomanosTest z Tst::Unit::TestCase
+class TestRomanos < Test::Unit::TestCase
 
 	def setup
 		@romanos = Romanos.new
@@ -91,15 +92,11 @@ end
 class Romanos
 
     def convertir(numero)
-    	if numero == 3
-    		"III"
-    	else
-    		if numero == 2
-	    		"I"
-	    	else
-	    		"III"
-	    	end
-    	end
+    	romano=""
+        romano<<"IV" if numero ==4
+    	romano<<"I"*numero if numero <4
+    	romano
+
     end
 
 end
